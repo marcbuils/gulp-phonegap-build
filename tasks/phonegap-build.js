@@ -37,7 +37,7 @@ function start(taskRefs) {
     }
 
     var buildHandler = responseHandler("Build", taskRefs, function () {
-        if (taskRefs.options.download) downloadApps(taskRefs, taskRefs.done);
+        if (taskRefs.options.download && Object.keys(taskRefs.options.download).length) downloadApps(taskRefs, taskRefs.done);
         else taskRefs.done();
     });
 
