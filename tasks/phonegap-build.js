@@ -94,7 +94,7 @@ function unlockKeys(taskRefs, callback) {
 function uploadZip(taskRefs, callback) {
     var config = { },
         data ={}
-    
+
     var appTitle = (typeof taskRefs.options.title != 'undefined' ? taskRefs.options.title : "App title");
     data.data = {
         title : appTitle
@@ -105,7 +105,13 @@ function uploadZip(taskRefs, callback) {
     if (typeof taskRefs.options.private != 'undefined') {
         data.data.private = taskRefs.options.private;
     }
-    if (typeof taskRefs.options.hydrates != 'undefined') {
+    if (typeof taskRefs.options.debug != 'undefined') {
+        data.data.debug = taskRefs.options.debug;
+    }
+    if (typeof taskRefs.options.share != 'undefined') {
+        data.data.share = taskRefs.options.share;
+    }
+    if (typeof taskRefs.options.version != 'undefined') {
         data.data.version = taskRefs.options.version;
     }
     if (typeof taskRefs.options.phonegap_version != 'undefined') {
